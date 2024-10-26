@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --arrow-stroke-color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #927df1;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-inline: 0.5rem;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.frame{
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.imagesSlider{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slideImage{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.arrow:hover{
+    background-color: #fff;
+    --arrow-stroke-color: #927df1;
+}
+
+.dotsContainer{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button.dot{
+    height: 0.875rem;
+    width: 0.875rem;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+button.dot:is(:hover , .active){
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .arrow {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .dotsContainer {
+        gap: 0.25rem;
+    }
+
+    button.dot {
+        height: 0.75rem;
+        width: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        gap: 0.5rem;
+    }
+
+    .arrow {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+}
